@@ -245,6 +245,10 @@ class USVisaRescheduler:
             var response = xhr.responseText;
             return response;"""
         # self.driver.get(self._check_date_url)
+        try:
+            self.driver.get(self._appointment_url)
+        except:
+            self.get_driver()
         if not self.is_logged_in():
             self.login()
             return self.get_date()
